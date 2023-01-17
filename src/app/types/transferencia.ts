@@ -1,4 +1,4 @@
 export interface transferencia{
-    valor: number;
-    dentino: number;
+    valor: number | undefined;
+    destino: number | undefined;
 }

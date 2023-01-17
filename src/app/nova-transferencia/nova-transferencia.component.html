@@ -3,11 +3,11 @@
     <h2 class="titulo">Nova Transferencia</h2>
     <div class="form-field">
       <label for="valor" class="form-field__label">Valor</label>
-      <input type="text" class="form-field__input" id="valor" [(ngModel)]="valor" name="valor">
+      <input type="text" class="form-field__input" id="valor" [(ngModel)]="transferencia.valor" name="valor">
     </div>
     <div class="form-field">
       <label for="conta" class="form-field__label">Conta</label>
-      <input type="text" class="form-field__input" id="conta" [(ngModel)]="destino" name="destino">
+      <input type="text" class="form-field__input" id="conta" [(ngModel)]="transferencia.destino" name="destino">
     </div>
     <div class="botao-wrapper">
       <button class="botao">Transferir</button>

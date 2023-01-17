@@ -6,20 +6,17 @@ import { transferencia } from '../types/transferencia';
   styleUrls: ['./nova-transferencia.component.scss']
 })
 export class NovaTransferenciaComponent {
-  valor?: transferencia;
-  destino?: transferencia;
+  transferencia: transferencia = { valor:undefined, destino:undefined};
   
   @Output() aoTransferir = new EventEmitter<any>();
 
   transferir () {
     console.log("Solicitada nova transferência");
-    const valorEmitir = {valor: this.valor ,destino: this.destino};
-    this.aoTransferir.emit(valorEmitir);
+    this.aoTransferir.emit(this.transferencia);
     this.limparCampos();
   }
 
   limparCampos(){
-    this.valor = undefined;
-    this.destino = undefined;
+    this.transferencia = { valor:undefined, destino:undefined};
   }
 }
