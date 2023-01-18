@@ -8,10 +8,10 @@ import { transferencia } from './types/transferencia';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferencia: transferencia = {valor: undefined, destino: undefined};
+  transferencias: transferencia[] = [];
 
   transferir($event: any){
     console.log($event);
-    this.transferencia = $event;
+    this.transferencias.push($event);
   }
 }
