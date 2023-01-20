@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TransferenciasService } from '../services/transferencias.service';
 import { transferencia } from '../types/transferencia';
 @Component({
   selector: 'app-extrato',
@@ -6,6 +7,12 @@ import { transferencia } from '../types/transferencia';
   styleUrls: ['./extrato.component.scss']
 })
 export class ExtratoComponent {
-  @Input() transferencias: transferencia[] = [];
+  transferencias: transferencia[] = [];
+  constructor(private service: TransferenciasService){
+
+  }
   
+  ngOnInit(){
+    this.transferencias = this.service.getTransferencias();
+  }
 }
