@@ -13,6 +13,8 @@ export class ExtratoComponent {
   }
   
   ngOnInit(){
-    this.transferencias = this.service.getTransferencias();
+    this.service.getTransferencias().subscribe((req: Transferencia[]) =>{
+      this.transferencias = req;
+    })
   }
 }
