@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { transferencia } from '../types/transferencia';
+import { Transferencia } from '../types/transferenciaModel';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TransferenciasService {
-  private listaTransferencias: transferencia[];
+  private listaTransferencias: Transferencia[];
 
   constructor() {
     this.listaTransferencias = [];
   }
 
-  getTransferencias(): transferencia[] {
+  getTransferencias(): Transferencia[] {
     return this.listaTransferencias;
   }
-  adicionarTransferencia(transferencia: transferencia): void {
+  adicionarTransferencia(transferencia: Transferencia): void {
     transferencia = this.hidratar(transferencia);
     this.listaTransferencias.push(transferencia);
   }
-  private hidratar(transferencia: transferencia){
+  private hidratar(transferencia: Transferencia){
     const transferenciaHidratada = { ...transferencia, data: new Date() };
     return transferenciaHidratada;
   }
